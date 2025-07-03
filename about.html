@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ตารางรายชื่อ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f0f8ff;
+    }
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #888;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #d0e0f0;
+    }
+    input[type="text"] {
+      padding: 8px;
+      width: 200px;
+    }
+    button {
+      padding: 8px 12px;
+      margin-left: 5px;
+    }
+    #nameForm {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📋 ตารางรายชื่อ</h1>
+
+  <!-- ฟอร์มเพิ่มชื่อ + ลบทั้งหมด -->
+  <form id="nameForm">
+    <label for="name">เพิ่มชื่อ:</label>
+    <input type="text" id="name" required>
+    <button type="submit">เพิ่ม</button>
+    <button type="button" id="clearAll">ลบทั้งหมด</button>
+  </form>
+
+  <!-- ตารางชื่อ -->
+  <table id="nameTable">
+    <thead>
+      <tr>
+        <th>ลำดับ</th>
+        <th>ชื่อ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- รายชื่อจะถูกโหลดจาก localStorage -->
+    </tbody>
+  </table>
+
+  <script>
+    const form = document.getElementById('nameForm');
+    const nameInput = document.getElementById('name');
+    const tableBody = document.querySelector('#nameTable tbody');
+    const clearAllBtn = document.getElementById('clearAll');
+    
+    let nameList = JSON.parse(localStorage.getItem('names')) || [];
+
+    function renderTable() {
+      tableBody.innerHTML = "";
+      nameList.forEach((name, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${name}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = nameInput.value.trim();
+      if (name !== "") {
+        nameList.push(name);
+        localStorage.setItem('names', JSON.stringify(nameList));
+        nameInput.value = "";
+        renderTable();
+      }
+    });
+
+    clearAllBtn.addEventListener('click', function() {
+      if (confirm("คุณต้องการลบรายชื่อทั้งหมดใช่หรือไม่?")) {
+        nameList = [];
+        localStorage.removeItem('names');
+        renderTable();
+      }
+    });
+
+    // โหลดข้อมูลจาก localStorage ทันทีที่เปิดหน้า
+    renderTable();
+  </script>
+
+</body>
+</html>
