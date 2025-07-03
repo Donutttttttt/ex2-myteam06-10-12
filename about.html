@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ตารางรายชื่อเพื่อน</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1740&q=80');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #888;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #d0e0f0;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      width: 180px;
+    }
+s
+    button {
+      padding: 8px 12px;
+      margin-left: 5px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #clearAll {
+      background-color: #f44336;
+      color: white;
+    }
+
+    #nameForm {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>📋 ตารางรายชื่อเพื่อน</h1>
+
+    <!-- ฟอร์มเพิ่มชื่อ + นามสกุล -->
+    <form id="nameForm">
+      <label for="firstname">ชื่อ:</label>
+      <input type="text" id="firstname" required placeholder="ชื่อ">
+
+      <label for="lastname">นามสกุล:</label>
+      <input type="text" id="lastname" required placeholder="นามสกุล">
+
+      <button type="submit">เพิ่ม</button>
+      <button type="button" id="clearAll">ลบทั้งหมด</button>
+    </form>
+
+    <!-- ตารางรายชื่อ -->
+    <table id="nameTable">
+      <thead>
+        <tr>
+          <th>ลำดับ</th>
+          <th>ชื่อ</th>
+          <th>นามสกุล</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- รายชื่อจะถูกเพิ่มที่นี่ -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const form = document.getElementById('nameForm');
+    const firstInput = document.getElementById('firstname');
+    const lastInput = document.getElementById('lastname');
+    const tableBody = document.querySelector('#nameTable tbody');
+    const clearAllBtn = document.getElementById('clearAll');
+    let count = 0;
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const firstName = firstInput.value.trim();
+      const lastName = lastInput.value.trim();
+
+      if (firstName !== "" && lastName !== "") {
+        count++;
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+          <td>${count}</td>
+          <td>${firstName}</td>
+          <td>${lastName}</td>
+        `;
+        tableBody.appendChild(newRow);
+        firstInput.value = "";
+        lastInput.value = "";
+      }
+    });
+
+    clearAllBtn.addEventListener('click', function() {
+      tableBody.innerHTML = "";
+      count = 0;
+    });
+  </script>
+
+</body>
+</html>
