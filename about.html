@@ -1,109 +1,276 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ตารางรายชื่อ</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 30px;
-      background-color: #f0f8ff;
-    }
-    table {
-      border-collapse: collapse;
-      width: 50%;
-      margin-top: 20px;
-    }
-    th, td {
-      border: 1px solid #888;
-      padding: 10px;
-      text-align: center;
-    }
-    th {
-      background-color: #d0e0f0;
-    }
-    input[type="text"] {
-      padding: 8px;
-      width: 200px;
-    }
-    button {
-      padding: 8px 12px;
-      margin-left: 5px;
-    }
-    #nameForm {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Siam Moo Kata</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            .no-print { display: none; }
+            body { color: black !important; background: white !important; }
+        }
+    </style>
 </head>
-<body>
+<body class="bg-orange-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-red-600 text-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-2xl font-bold">Siam Moo Kata</h1>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="index.html" class="hover:text-yellow-200 transition-colors">Home</a>
+                    <a href="tables.html" class="hover:text-yellow-200 transition-colors">Tables</a>
+                    <a href="reserve.html" class="hover:text-yellow-200 transition-colors">Reserve</a>
+                    <a href="menu.html" class="hover:text-yellow-200 transition-colors">Menu</a>
+                    <a href="about.html" class="underline decoration-2 underline-offset-4 hover:text-yellow-200 transition-colors">About</a>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-  <h1>📋 ตารางรายชื่อ</h1>
+    <!-- Hero Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-red-800 mb-6">Our Story</h2>
+            <p class="text-xl text-gray-600 leading-relaxed">
+                Since 2015, Siam Moo Kata has been bringing authentic Thai-Korean fusion dining to Bangkok. 
+                Our unique combination of traditional Thai hotpot and Korean BBQ creates an unforgettable culinary experience.
+            </p>
+        </div>
+    </section>
 
-  <!-- ฟอร์มเพิ่มชื่อ + ลบทั้งหมด -->
-  <form id="nameForm">
-    <label for="name">เพิ่มชื่อ:</label>
-    <input type="text" id="name" required>
-    <button type="submit">เพิ่ม</button>
-    <button type="button" id="clearAll">ลบทั้งหมด</button>
-  </form>
+    <!-- Story Section -->
+    <section class="py-12 px-4 bg-orange-100">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-3xl font-bold text-red-800 mb-6">The Moo Kata Tradition</h3>
+                    <div class="space-y-4 text-gray-700 leading-relaxed">
+                        <p>
+                            Moo Kata, literally meaning "pork skillet," originated from the fusion of Korean BBQ and Thai hotpot. 
+                            This unique cooking style uses a special dome-shaped pan where you grill meat on top while cooking 
+                            vegetables and noodles in the broth below.
+                        </p>
+                        <p>
+                            At Siam Moo Kata, we've perfected this art by sourcing the freshest ingredients from local markets 
+                            and creating our signature marinades that blend Thai herbs with Korean flavors. Every meal is a 
+                            social experience meant to be shared with family and friends.
+                        </p>
+                        <p>
+                            Our chefs have over 20 years of combined experience in Thai and Korean cuisine, ensuring that 
+                            every dish maintains the authentic flavors while meeting modern quality standards.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <img src="/placeholder.svg?height=300&width=400" alt="Traditional Moo Kata Setup" class="w-full h-64 object-cover rounded-xl mb-6">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">What Makes Us Special</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                            Fresh ingredients sourced daily
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                            Authentic Thai-Korean fusion recipes
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                            Family-friendly atmosphere
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                            Expert chefs with 20+ years experience
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- ตารางชื่อ -->
-  <table id="nameTable">
-    <thead>
-      <tr>
-        <th>ลำดับ</th>
-        <th>ชื่อ</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- รายชื่อจะถูกโหลดจาก localStorage -->
-    </tbody>
-  </table>
+    <!-- Location Section -->
+    <section class="py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold text-red-800 mb-8 text-center">Visit Us</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-6">Location & Hours</h4>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <svg class="w-5 h-5 text-red-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                </svg>
+                                Address
+                            </h5>
+                            <p class="text-gray-600 ml-7">
+                                123 Sukhumvit Road<br>
+                                Watthana District<br>
+                                Bangkok 10110, Thailand
+                            </p>
+                        </div>
 
-  <script>
-    const form = document.getElementById('nameForm');
-    const nameInput = document.getElementById('name');
-    const tableBody = document.querySelector('#nameTable tbody');
-    const clearAllBtn = document.getElementById('clearAll');
-    
-    let nameList = JSON.parse(localStorage.getItem('names')) || [];
+                        <div>
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <svg class="w-5 h-5 text-red-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                                </svg>
+                                Opening Hours
+                            </h5>
+                            <div class="text-gray-600 ml-7">
+                                <p class="mb-1">Monday - Sunday: 11:00 AM - 11:00 PM</p>
+                                <p class="text-sm text-red-600">Last order: 10:30 PM</p>
+                            </div>
+                        </div>
 
-    function renderTable() {
-      tableBody.innerHTML = "";
-      nameList.forEach((name, index) => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-          <td>${index + 1}</td>
-          <td>${name}</td>
-        `;
-        tableBody.appendChild(row);
-      });
-    }
+                        <div>
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <svg class="w-5 h-5 text-red-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                </svg>
+                                Contact
+                            </h5>
+                            <div class="text-gray-600 ml-7">
+                                <p class="mb-1">📞 +66 2 123 4567</p>
+                                <p class="mb-1">✉️ info@siammookata.com</p>
+                                <p>📱 Line: @siammookata</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const name = nameInput.value.trim();
-      if (name !== "") {
-        nameList.push(name);
-        localStorage.setItem('names', JSON.stringify(nameList));
-        nameInput.value = "";
-        renderTable();
-      }
-    });
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-6">Find Us</h4>
+                    <div class="bg-gray-200 rounded-xl h-64 flex items-center justify-center mb-6">
+                        <img src="/placeholder.svg?height=250&width=400" alt="Restaurant Location Map" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            5 minutes walk from Phrom Phong BTS
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Free parking available (20 spaces)
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Wheelchair accessible entrance
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Air-conditioned dining area
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    clearAllBtn.addEventListener('click', function() {
-      if (confirm("คุณต้องการลบรายชื่อทั้งหมดใช่หรือไม่?")) {
-        nameList = [];
-        localStorage.removeItem('names');
-        renderTable();
-      }
-    });
+    <!-- Social Media Section -->
+    <section class="py-12 px-4 bg-orange-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-3xl font-bold text-red-800 mb-8">Follow Our Journey</h3>
+            <p class="text-gray-600 mb-8">Stay connected with us for the latest updates, special offers, and behind-the-scenes content!</p>
+            
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow group focus:ring-4 focus:ring-red-200">
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-3 group-hover:bg-blue-700 transition-colors">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-800">Facebook</h4>
+                        <p class="text-sm text-gray-600">@SiamMooKataBKK</p>
+                    </div>
+                </a>
 
-    // โหลดข้อมูลจาก localStorage ทันทีที่เปิดหน้า
-    renderTable();
-  </script>
+                <a href="#" class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow group focus:ring-4 focus:ring-red-200">
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-3 group-hover:bg-green-600 transition-colors">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-800">Line</h4>
+                        <p class="text-sm text-gray-600">@siammookata</p>
+                    </div>
+                </a>
 
+                <a href="#" class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow group focus:ring-4 focus:ring-red-200">
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-3 group-hover:from-purple-600 group-hover:to-pink-600 transition-colors">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986s11.987-5.368 11.987-11.986C24.014 5.367 18.635.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.148-1.188C4.613 15.101 4.613 13.949 4.613 12.652s0-2.449.688-3.148c.7-.699 1.851-1.188 3.148-1.188s2.449.489 3.148 1.188c.699.699 1.188 1.851 1.188 3.148s-.489 2.449-1.188 3.148c-.699.698-1.851 1.188-3.148 1.188z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-800">Instagram</h4>
+                        <p class="text-sm text-gray-600">@siammookata_bkk</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-red-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Contact Info</h4>
+                    <p class="mb-2">📍 123 Sukhumvit Road, Bangkok 10110</p>
+                    <p class="mb-2">📞 +66 2 123 4567</p>
+                    <p>✉️ info@siammookata.com</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Opening Hours</h4>
+                    <p class="mb-2">Monday - Sunday</p>
+                    <p class="mb-2">11:00 AM - 11:00 PM</p>
+                    <p class="text-yellow-200">Last order: 10:30 PM</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center hover:bg-yellow-300 transition-colors focus:ring-4 focus:ring-yellow-200" aria-label="Facebook">
+                            <svg class="w-5 h-5 text-red-800" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center hover:bg-yellow-300 transition-colors focus:ring-4 focus:ring-yellow-200" aria-label="Line">
+                            <svg class="w-5 h-5 text-red-800" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center hover:bg-yellow-300 transition-colors focus:ring-4 focus:ring-yellow-200" aria-label="Instagram">
+                            <svg class="w-5 h-5 text-red-800" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986s11.987-5.368 11.987-11.986C24.014 5.367 18.635.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.148-1.188C4.613 15.101 4.613 13.949 4.613 12.652s0-2.449.688-3.148c.7-.699 1.851-1.188 3.148-1.188s2.449.489 3.148 1.188c.699.699 1.188 1.851 1.188 3.148s-.489 2.449-1.188 3.148c-.699.698-1.851 1.188-3.148 1.188z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-red-700 mt-8 pt-8 text-center">
+                <p>&copy; 2024 Siam Moo Kata. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
